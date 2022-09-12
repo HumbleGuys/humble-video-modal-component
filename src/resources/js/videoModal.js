@@ -2,6 +2,12 @@ export default () => ({
     isOpen: false,
 
     init() {
-        console.log("init");
+        Alpine.effect(() => {
+            this.isOpen = this.$store.videoModal.isPlaying;
+        });
+    },
+
+    close() {
+        this.$store.videoModal.close();
     },
 });
