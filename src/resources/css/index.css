@@ -19,11 +19,34 @@
 }
 
 .videoModal__closeButton {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
     z-index: 1;
 }
 
 .videoModal__player {
     position: relative;
     z-index: 1;
+}
+
+.videoModal__playerInner {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    display: block;
+}
+
+.videoModal__playerInner iframe,
+.videoModal__playerInner object,
+.videoModal__playerInner embed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }

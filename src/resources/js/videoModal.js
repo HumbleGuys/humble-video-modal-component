@@ -10,4 +10,12 @@ export default () => ({
     close() {
         this.$store.videoModal.close();
     },
+
+    isYoutubeVideo() {
+        if (!this.currentVideo) {
+            return false;
+        }
+
+        return this.currentVideo.includes("youtu");
+    },
 });
