@@ -6,7 +6,7 @@
     x-transition:leave="videoModal-leave"
     x-transition:leave-start="videoModal-leave-start"
     x-transition:leave-end="videoModal-leave-end"
-    x-show="isOpen"
+    x-show="currentVideo"
     id="videoModal"
     {{ $attributes->merge(['class' => 'videoModal']) }}
     role="region"

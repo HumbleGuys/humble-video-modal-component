@@ -1,9 +1,9 @@
 export default {
-    isPlaying: false,
+    currentVideo: false,
 
     init() {
         document.addEventListener("keydown", (event) => {
-            if (!this.isPlaying) {
+            if (!this.currentVideo) {
                 return;
             }
 
@@ -14,10 +14,10 @@ export default {
     },
 
     play(video) {
-        this.isPlaying = true;
+        this.currentVideo = video;
     },
 
     close() {
-        this.isPlaying = false;
+        this.currentVideo = false;
     },
 };

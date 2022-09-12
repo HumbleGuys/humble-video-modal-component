@@ -1,9 +1,9 @@
 export default () => ({
-    isOpen: false,
+    currentVideo: false,
 
     init() {
         Alpine.effect(() => {
-            this.isOpen = this.$store.videoModal.isPlaying;
+            this.currentVideo = this.$store.videoModal.currentVideo;
         });
     },
 

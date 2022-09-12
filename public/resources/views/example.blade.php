@@ -1,15 +1,14 @@
 <x-layout>
-    <x-videoModal::base>
-        <x-videoModal::closeButton />
+    <x-videoModal::base class="myVideoModal">
+        <x-videoModal::closeButton class="myVideoModal__closeButton" />
 
-        hejhej
+        <x-videoModal::player class="myVideoModal__player" />
     </x-videoModal::base>
 
-    <button
-        type="button"
-        @click="$store.videoModal.play('https://www.youtube.com/watch?v=Mkx3e_HK7N4')"
-        x-data
+    <x-videoModal::trigger
+        video="https://www.youtube.com/watch?v=Mkx3e_HK7N4"
+        class="myTriggerButton"
     >
         play video
-    </button>
+    </x-videoModal::trigger>
 </x-layout>
