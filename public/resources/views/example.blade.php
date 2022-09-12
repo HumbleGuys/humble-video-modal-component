@@ -6,11 +6,12 @@
         play video
     </x-videoModal::trigger>
 
-    <x-videoModal::base class="myVideoModal">
-        <x-videoModal::backdrop class="myVideoModal__backdrop" />
+    <br>
 
-        <x-videoModal::closeButton class="myVideoModal__closeButton" />
-
-        <x-videoModal::player class="myVideoModal__player" />
-    </x-videoModal::base>
+    <x-videoModal::trigger
+        video="https://www.youtube.com/watch?v=US8CDs4-Qlo"
+        class="myTriggerButton"
+    >
+        play another video
+    </x-videoModal::trigger>
 </x-layout>

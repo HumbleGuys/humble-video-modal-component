@@ -1,5 +1,6 @@
 @props([
-    'video'
+    'video',
+    'autoIncludeModal' => true
 ])
 
 <button
@@ -10,3 +11,17 @@
 >
     {!! $slot !!}
 </button>
+
+@if ($autoIncludeModal)
+    @once
+        @push('bottom')
+            <x-videoModal::base>
+                <x-videoModal::backdrop />
+        
+                <x-videoModal::closeButton />
+        
+                <x-videoModal::player />
+            </x-videoModal::base>
+        @endpush   
+    @endonce 
+@endif

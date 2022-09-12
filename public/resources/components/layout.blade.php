@@ -51,5 +51,7 @@
     </head>
 <body>
     {!! $slot !!}
+
+    @stack('bottom')
 </body>
 </html>
