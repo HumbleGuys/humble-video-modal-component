@@ -25,7 +25,15 @@ export default (url) => ({
     },
 
     initPlayer() {
-        this.player = new YT.Player("videoModalYoutube", {
+        if (window.YT === undefined || !window.YT) {
+            window.onYouTubeIframeAPIReady = null;
+
+            this.createPlayer();
+
+            return;
+        }
+
+        this.player = new window.YT.Player("videoModalYoutube", {
             height: 1080,
             width: 1920,
             videoId: this.videoId,
