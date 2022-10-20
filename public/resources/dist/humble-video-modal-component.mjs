@@ -25,7 +25,11 @@ const d = () => ({
     };
   },
   initPlayer() {
-    this.player = new YT.Player("videoModalYoutube", {
+    if (window.YT === void 0 || !window.YT) {
+      window.onYouTubeIframeAPIReady = null, this.createPlayer();
+      return;
+    }
+    this.player = new window.YT.Player("videoModalYoutube", {
       height: 1080,
       width: 1920,
       videoId: this.videoId,
@@ -47,7 +51,7 @@ const d = () => ({
   stopVideo() {
     this.player.stopVideo();
   }
-}), s = {
+}), r = {
   currentVideo: !1,
   init() {
     document.addEventListener("keydown", (e) => {
@@ -62,5 +66,5 @@ const d = () => ({
   }
 };
 document.addEventListener("alpine:init", () => {
-  window.Alpine.data("videoModal", d), window.Alpine.data("youtubePlayer", n), window.Alpine.store("videoModal", s);
+  window.Alpine.data("videoModal", d), window.Alpine.data("youtubePlayer", n), window.Alpine.store("videoModal", r);
 });
